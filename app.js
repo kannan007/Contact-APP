@@ -1,0 +1,39 @@
+var app=angular.module('contact', ['ui.router','ngResource']);
+app.config(function($stateProvider,$urlRouterProvider)
+ {
+$stateProvider
+.state('home',
+{
+	url:'/',
+	views:
+	{
+		'header':
+		{
+			templateUrl:'header.html'
+		},
+		'content':
+		{
+			templateUrl:'body.html',
+			controller:'formcontroller'
+		},
+		'footer':
+		{
+			templateUrl:'footer.html'
+		}
+	}
+})
+.state('home.form',
+{
+	url:'newusers',
+	views:
+	{
+		'content@':
+		{
+
+			templateUrl:'signup.html',
+			controller:'formcontroller'
+		}
+	}
+})
+$urlRouterProvider.otherwise('/');	
+})
