@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title>Kik Users</title>
+</head>
+<body ng-app="kik" ng-controller="formcontroller">
+<div class="container">
+<div class="row">
+<div ng-repeat="x in users">
+<h3>{{x.userid}}</h3>
+{{x.name}}
+</div>
+</div>
+</div>
+</body>
+</html>
