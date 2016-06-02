@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Contact Users
+	</title>
+	<style type="text/css">
+	body
+	{
+		margin-top: 100px;
+	}
+	</style>
+</head>
+<body ng-app="contact" ng-controller="formcontroller">
+<div class="container">
+<div class="row">
+<div class="col-md-offset-1">
+<form role="form" name="userform" ng-submit="formcheck()" novalidate>
+<div class="form-group" ng-class="{'has-error': userform.userId.$error.required && !userform.userId.$pristine}">
+	<input type="number" class="form-control" name="userId" ng-model="user.userid" placeholder="UserID" required>
+	<span ng-show="userform.userId.$error.required && !userform.userId.$pristine" class="help-block">User id is required</span>
+</div>
+<div class="form-group" ng-class="{'has-error':userform.Fname.$error.required && !userform.Fname.$pristine}">
+	<input type="text" class="form-control" name="Fname" ng-model="user.name" placeholder="Name" required>
+	<span ng-show="userform.Fname.$error.required && !userform.Fname.$pristine">Name is required</span>
+</div>	
+<button type="submit" class="btn" ng-disabled="userform.$invalid">Submit</button>
+</form>
+</div>	
+</div>
+</div>
+</body>
+</html>
